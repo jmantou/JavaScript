@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Level I - Ex 6 Array Methods</title>
+</head>
+<body>
+    <h1>Level I - Ex 5 - Introduction to Arrays</h1>
+    <p>Every array has a length property. Contrary to most languages, there is 
+        no upper bound to the array length. Thus if we store an element with an 
+        index greater than the current array length, there will be no upper bound
+        error. The array will increase automatically to contain the new element.
+    </p>
+    <p>Several array method exists to perform operations on an array. Some of 
+        them mutate the original array some don't.
+    </p>
+    <h2>Common Array Methods</h2>
+    <p>You can see the most common ones in the picture below:</p>
+    <img src="./img/array-methods.jpg" alt="Common array methods">
+    <hr/>
+<script>
+var names = ["John", "Mary", "Simon", "Jimmy"];
+document.write(names + "<br/>");
+document.write("'names' array length: " + names.length + "<br/>");
+names.push("James"); // adds new element at the end of array - Mutates
+document.write("<br/>");
+document.write(names.toString() + "<br/>");
+document.write("'names' array length: " + names.length + "<br/>");
+names.unshift("Peter");
+document.write(names[0] + "<br/>");
+names.sort(); // Sorts the array in alhabetical order not by numbers
+document.write(names.toString() + "<br/>");
+names.reverse(); // reverses the order of the array elements
+document.write(names.toString() + "<br/>");
+document.write("Name to be removed: " + names[0] + "<br/>");
+names.shift(); // removes an element from the front of array
+document.write(names.toString() + "<br/>");
+document.write("Name to be removed: " + names[4] + "<br/>");
+names.pop(); // removes an element from the end of array
+document.write(names.toString() + "<br/>");
+</script>
+</body>
+</html>

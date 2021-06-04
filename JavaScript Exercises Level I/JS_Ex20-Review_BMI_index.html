@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (20)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 20 - Computing the BMI Health Index</h1>
+		<p>
+			In this exercise we will compute the Body Mass Index for data entered by a single individual. We
+			 also going to validate the data entered in the prompts according to the index's rules using
+			 various techniques. We also review loops and <code>if ... else if </code>conditions and valid
+			 data input.
+		</p>
+		<p>
+			You can learn more about BMI documentation in the following link:
+		</p>
+		
+		<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2811109/">BMI Info</a>
+        
+		<hr/>
+	<script>
+		var name = prompt("Enter your name: ");
+		// Validating empty strings with length property
+		while(name.length == 0) {
+			alert("You must enter your name");
+			name = prompt("Enter your name: ");
+		}
+		
+		var age = prompt("Enter your age: ");
+		// !age checks for empty strings, null, undefined, false, 0 & NaN
+		while ((age < 0 || age > 100) || isNaN(age) || (!age)) {
+			alert("Wrong data! Please try again!");
+			age = prompt("Enter your age: ");
+		}
+		var weight = prompt("Enter your weight in Kg: ");
+		while ((weight < 0 || weight > 200) || isNaN(weight) || (!weight)) {
+			alert("Wrong data! Please try again!");
+			weight = prompt("Enter your weight: ");
+		}
+		var height = prompt("Enter your height in meter s: ");
+		while ((height < 0 || height > 200) || isNaN(height) || (!height)) {
+			alert("Wrong data! Please try again!");
+			height = prompt("Enter your height: ");
+		}
+
+		var bmi = parseFloat(weight) / Math.pow(height, 2);
+
+		if (age < 18) {
+			document.write("Cannot compute BMI for persons under 18 years!");
+		}
+		else {
+			document.write(name + ": Your BMI is <strong>" + bmi.toFixed(2) + "</strong><br/>");
+		}
+		if (bmi < 18.5) {
+			document.write("Skinny person you need to gain some weight.<br/>");
+		}
+		else if (bmi < 25) {
+			document.write("Normal weight! Try it to keep it that way.<br/>");
+		}
+		else if (bmi < 30) {
+			document.write("Above normal weight! You need to lose some weight.<br/>");
+		}
+		else if (bmi < 40) {
+			document.write("Overweight! You need to urgent diet.<br/>");
+		}
+		else {
+			document.write("Heavy overweight! Your health is in danger. You need urgent diet!<br/>");
+		}
+	</script>
+	</body>
+</html>
+
+		
+	

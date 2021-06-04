@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (16)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 16 - Functions Part I</h1>
+		<p>
+			Functions are an elemental concept in all computer languages. A function encloses
+			a set of statements as a modular unit. Functions in JavaScript are used for code reuse, information
+			hiding and composition. Generally, the craft of programming is athe factoring of a set of
+			requirements into a set of functions and data structures.
+		</p>
+		<p>
+			All functions in Javascript are first class objects, meaning they can be passed around like any
+			other object reference. Regardless of how they are created, functions are instances of a global
+			object named <code>Function</code>. This means that every function will have access to certain
+			methods and properties.
+		</p>
+		<p>
+			Once we define a function, we can assign it to a variable, just like any value. This is called
+			a <em>Function Literal</em>. 
+		</p>
+		<p>
+			In order to execute the function code we have to invoke the
+			function. We do this by simply calling the function with it's name and a set of parenthesis.
+		</p>
+		<p>
+			Functions can also take one or more parameters in their function definition. These arguments
+			are listed inside the parenthesis () in the function definition.
+		</p>
+		<p>
+			In the function body, the arguments (parameters) behave as if they were local variables and 
+			can be manipulated inside the function.
+		</p>
+		<hr/>
+	<script>
+	var myName;
+	myName = function() {
+		document.write("My name is John<br/>");
+	}
+
+	var myNameParameter = function(name) {
+		document.write("My name is " + name + "<br/>");
+	}
+	
+	function writeMsg(message) {
+		if (message) {
+			document.write(message + "<br/>");
+		}
+		else {
+			document.write("No message to print!<br/>");
+		}
+	}
+
+	// Functions are meant to be invoked
+	myName();
+	myNameParameter("Nick");
+	writeMsg("Hello Everybody!");
+	writeMsg();
+
+	console.log(myName());
+	console.log(myName);
+	</script>
+	</body>
+</html>
+
+		
+	

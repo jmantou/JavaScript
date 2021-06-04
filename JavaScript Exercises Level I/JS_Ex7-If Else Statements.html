@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (7)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 7 - Simple Weight App with If Statements</h1>
+		<h2>Disclaimer</h2>
+		<p>This is a Javascript simple app that after taking the weight and height as input from the user,
+			computes the DMS of this person and categorizes the individual.</p> 
+		<p>The purpose of this exercise is to familiarize the student with if ... else statement.
+			In this level of exercises the app is not sanitizing the input from the user, that is 
+		checking for negative or extreme values and the right age. This will be done in a later revision of the app after we learn loops and data cleaning.</p>
+		
+        <div align="left">
+		<hr/>
+		<h1>The DMS Calculator</h1>
+		<h2>Personal Information</h2>
+         <script>
+		    var age = prompt("Enter your age: ");
+
+		    if (age < 18) {
+		    	alert("Computing DMS is not accurate! he DMS calculator works for persons over 18 years old.");
+		    }
+		    
+		    var height = prompt("PLease enter your height in meters: ");
+			var weight = prompt("Please enter your body weight in kg: ");
+			document.write("Height: <em>" + height + " cm </em>");
+			document.write("Weight: <em>" + weight + " kg </em>");
+			
+			var dms = weight / (height * height); // Will be using Math.pow() in the Ex 7
+        	document.write("<b>Your DMS is: " + dms.toFixed(2) + "</b><br/>");
+        	
+        	if (dms < 18.5) {
+            	document.write("<b>Skinny person! You need to gain some weight.</b>");
+        	}
+        	else if (dms < 25) {
+            	document.write("<b>Normal weight! Try to keep that way.</b>");
+        	}
+        	else if (dms < 30) {
+            	document.write("<b>Above normal weight! You need to lose some weight.</b>");
+        	}
+        	else if (dms < 40) {
+            	document.write("<b>Overweight! You need urgent diet!</b>");
+        	}
+        	else {
+            	document.write("<b>Heavy overweight! Lose weight, your health is in danger!</b>");
+        	}
+		  </script>
+		  <blockquote><strong>NOTE:</strong> The DMS calculator works for persons over 18 years old.</blockquote>
+        </div>
+	</body>
+</html>
+
+		
+	

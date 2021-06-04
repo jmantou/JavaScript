@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (9)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 9 - While Loops v1</h1>
+		<p>
+			A <code>while</code> loop is similar to a <code>for</code> loop except that the initializing
+			part is taking place outside of the loop body and variable altering inside it. 
+		</p>
+		<p>
+			As we mentioned in for loops, there are several loop types available depending on how and when we want the condition to be checked. Generally it's better to use the loop that apllies best to the programming solution we try to achieve. 
+		</p>
+        
+		<hr/>
+	<script>
+		var num = 10;
+		var someArray = [1, 35, "3rd Element", false];
+		document.write("Multiplication Table of " + num + ":<br/>");
+		var i = 0;
+		while (i < 10) {
+			document.write(num + " x " + i + " = " + (num * i) + "<br/>");
+			i++;
+		}
+
+		document.write("<br/>");
+		document.write("Even numbers up to 20:<br/>");
+		var j = 0; // Indexesa are usually simple letters
+		while (j <= 20) {
+			document.write(j + "<br/>");
+			j++;
+		}
+		
+		document.write("<br/>");
+		document.write("Displaying Array elements with While loop:<br/>");
+		var k = 0; 
+		while (k < someArray.length) {
+			document.write(someArray[k] + " - ");
+			k++;
+		}
+		
+		document.write("<br/>");
+		
+		document.write("Displaying Array elements in reverse order with simple While loop:<br/>");
+		var l = someArray.length; // Correct value is someArray.length - 1. Find Why?
+		while (l >= 0) {
+			document.write(someArray[l] + ", ");
+			l--;
+		}
+
+	</script>
+	</body>
+</html>
+
+		
+	
