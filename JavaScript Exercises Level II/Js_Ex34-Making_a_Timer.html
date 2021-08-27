@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Javascript Level II - Ex 34</title>
+
+	<style>
+	#container {
+		text-align: left;
+		font-size: 40px;
+		margin-top: 0px;
+		font-family: 'Orbitron', Courier, sans-serif;
+		@font-face{
+ 			font-family:'digital-clock-font';
+ 			src: url('<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>');
+			
+		}
+	}
+	</style>
+</head>
+<body>
+	<h1>Level II - Ex 34 Making a Backwards Timer</h1>
+	<p>In this exercise we will make a backwards timer.</p>
+	<hr/>
+	<h2>Backwards Timer</h2>
+	<p>Second Coming scheduled at :</p>
+	<div id="container"></div>
+	
+	<script>
+	var theFutureTime = new Date(2030, 2, 30, 2, 50).getTime();
+	
+	
+	const countDownTimer = setInterval(function() {
+		var timeNow = new Date().getTime(); // Getting current time in ms
+		var difference = theFutureTime - timeNow;
+		
+		// Milliseconds must be converted to days, hours, minutes, seconds
+		var days = Math.floor(difference / (1000 * 3600 * 24)); // Milliseconds per day
+		var hours = Math.floor((difference % (1000 * 3600 * 24)) / (1000 * 3600)); // Ms per hour
+		var minutes = Math.floor((difference % (1000 * 3600)) / (1000 * 60)); 
+		var seconds = Math.floor((difference % (1000 * 60)) / (1000));
+
+		document.getElementById('container').innerHTML =
+			`${days}d ${hours}h ${minutes}m ${seconds}s`;
+		
+		if (difference <= 0) {
+			clearInterval(countDownTimer);
+			document.getElementById('container').innerHTML = `Time Expired! God Help Us!`;
+		}
+	}, 1000);
+	</script>
+</body>
+</html>

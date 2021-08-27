@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Level II - Ex 40</title>
+</head>
+<body>
+    <h1>Level II - Ex 40 Objects 6</h1>
+    <h2><code>Object.create()</code> Method</h2>
+
+    <p>The <code>Object.create()</code> method creates a new object, using an existing
+        object as the prototype of the new one.
+    </p>
+    
+<hr/>
+<script>
+const superhero = {
+    name: "Thor",
+    isHuman: false,
+    superpowers: {strength: 8, weapon: "Mjolnir"}
+};
+
+const cAmerica = Object.create(superhero);
+const hulk = Object.create(superhero);
+console.log(superhero);
+
+cAmerica.name = "Captain America";
+cAmerica.isHuman = true;
+cAmerica.superpowers = {strength: 5 , weapon: "Vibranium Shield"};
+hulk.name = "hulk";
+hulk.isHuman = true;
+hulk.superpowers = {strength: 10, weapon: "Big Objects around him"};
+
+document.write(JSON.stringify(cAmerica) + "<br/>");
+console.log(cAmerica);
+document.write(JSON.stringify(hulk) + "<br/>");
+console.log(hulk);
+
+document.write(superhero.superpowers.weapon + "<br/>");
+document.write(cAmerica.superpowers[1] + "<br/>");
+document.write(hulk.superpowers["weapon"] + "<br/>");
+
+
+</script>    
+</body>
+</html>

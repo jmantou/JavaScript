@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 38</title>
+</head>
+<body>
+	<h1>Level II - Ex 38 Objects 4</h1>
+	<h2>Constructors</h2>
+	<p>
+		Any function you create can serve as a constructor via <code>new</code> keyword so as to make a class definition. class. A constructor’s job is to initialize the object and set any properties needed for an instance of
+		that object. Constructor functions generally should not have return values. The function itself serves as
+		the template for the object, so a return value is redundant. By definition we usually make the first letter of the function uppercase so as to differentiate from regular functions.
+	</p>
+	<h2>Prototyping</h2>
+	<p>
+		In prototypal inheritance you create objects that serve as blueprints for other objects. There is really no formal class definition (at least prior to ES5), so you cannot define a class and make instances of that class but you can use the <code>prototype</code> property and define which members will become part of object instances. The prototype for the object is always kept in memory. That means if the prototype changes at any moment all of the object instances are updated as well.
+	</p>
+
+<hr/>
+<div id="container">
+	
+</div>
+
+<script>
+function Student(fullName, age, classroom) {
+	this.fullName = fullName;
+	this.age = age;
+	this.classroom = classroom;
+}
+
+var student1 = new Student("John Kondylis", "18", "JavaScript");
+console.table(student1);
+
+var result = ""; // Initialize with 1 space
+for (let x in student1) {
+    result += student1[x] + " "; // Cannot use student1.x because x is variable not property
+}
+document.write(`${result}<br/>`);
+
+console.log(student1.constructor);
+document.write(`${student1.constructor}<br/>`);
+console.log(student1.constructor == Student); // true
+ 
+Student.prototype.introduce = function() {
+	document.write(`Hello I am ${this.fullName} and I study ${this.classroom} <br/>`);
+}
+
+student1.introduce();
+
+</script>
+</body>
+</html>
+

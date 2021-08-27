@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 39</title>
+</head>
+<body>
+	<h1>Level II - Ex 39 Objects 5 Destructuring</h1>
+	<h2>Object Destructuring</h2>
+	<p>
+		Destructuring assignment allows you to locally scope fields of an object and
+		declare which values will be used. We can scope some of the keys of an object 
+		locally and use them as variables.
+	</p>
+	<h2>Array Destructuring</h2>
+	<p>
+		We can also destructure values from arrays (they are objects after all). We 
+		can also pass over unnecessary array values with 'list matching' using commas.
+		That means that commas will take the place of elements that should be skipped.
+	</p>
+
+<hr/>
+<div id="container">
+	
+</div>
+
+<script>
+const sandwich = {
+	bread: 'plain toast bread',
+	meat: 'turkey slices',
+	cheese: 'edam',
+	toppings: ['lettuce', 'ketchup', 'salt']
+};
+
+// bread and meat are now local variables out of the original object.
+// This variables are local (if we use let) so we can change them without
+// affecting the 'sandwich' object.
+const {bread, meat} = sandwich; 
+document.write(`I like ${meat} sandwiches with ${bread}!<br/>`);
+// bread = 'briose'; cannot reassign a const variable
+
+let {cheese} = sandwich;
+console.log(cheese);
+console.log(sandwich.cheese);
+cheese = 'gouda';
+console.log(`After reassignment of 'cheese' var:`);
+console.log(cheese);
+console.log(sandwich.cheese);
+document.write(`I like ${meat} sandwiches with ${bread} and ${cheese}!<br/>`);
+
+const pets = ['dog', 'cat', 'bird'];
+const [firstPet] = pets;
+document.write(`I have a ${firstPet}.<br/>`);
+const [, , thirdPet] = ['horse', 'iguana', 'cat'];
+document.write(`My brother has a ${thirdPet}.<br/>`);
+
+</script>
+</body>
+</html>
+

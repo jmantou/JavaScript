@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Level II - Ex 33</title>
+</head>
+
+<body>
+	<h1>Level II - Ex 33 Date & Time Review</h1>
+	<p>In this exercise we will make some calculations with time objects and in the next example 
+	we will present a backwards counting timer.</p>
+	
+	<hr/>
+	<div id="container"></div>
+	<script>
+	var timeNow = new Date();
+	var theFutureTime = new Date(2029, 3, 1, 2, 50);
+	// The time below in minutes must be formatted in (h:m:s)
+	var difference = (theFutureTime - timeNow) / 60000;
+	document.getElementById('container').innerHTML = `Second Coming in: ${difference.toFixed(4)} minutes. Regret and save yourselfs`;
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 26</title>
+</head>
+<body>
+	<h1>Level II - Ex 26 - Document Object Model (DOM) 1</h1>
+	<p>
+		The DOM is your gateway to the contents of a web page and the key to making your pages 
+		come alive with JavaScript.
+		The DOM is also an extremely detailed resource from which you can determine just about
+		anything about the content and layout of a web page.
+	</p>
+	<p>The easiest way to find an HTML element in the DOM, is by using
+		the <code>id</code> element. If the element is found, the method returns the element as an
+		object you can assign to a variable, otherwise element is null.
+	</p>
+	<p>
+		If we want to find all elements  with the same tag we can use 
+		<code>getElementsByTagName()</code> method.
+	</p>
+	<p class="someclass">
+		If we want to find all HTML elements with the same class name we can use
+		<code>getElementsByClassName()</code> method.
+	</p>
+	<p class="someclass">
+		If we want to find all HTML elements that match a specified CSS selector (id, class, types)
+		we can use the <code>querySelectorAll()</code> method.
+	</p>
+<hr/>
+	<div id="content"></div>
+	<div id="tag"></div>
+	<div id="class"></div>
+	<div id="query-selector"></div>
+
+<script>
+var theContent = document.getElementById("content");
+theContent.innerHTML = "Hello from 'content' div.";
+
+var h1Text = document.getElementsByTagName("h1");
+var pText = document.getElementsByTagName("p");
+document.getElementById("tag").innerHTML = "header1 Content: " + h1Text[0].innerHTML;
+
+var pSomeClassText = document.getElementsByClassName("someclass");
+document.getElementById("class").innerHTML = "Paragraph with class someclass Content: " + 
+    pSomeClassText[0] .innerHTML;
+
+var x = document.querySelectorAll("p.someclass"); // CSS selector p.someclass
+document.getElementById("query-selector").innerHTML = "p.someclass 1st Content: " + x[0].innerHTML;
+</script>
+</body>
+</html>
+

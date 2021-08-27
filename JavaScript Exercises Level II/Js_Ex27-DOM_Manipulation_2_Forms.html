@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 27</title>
+</head>
+<body>
+	<h1>Level II - Ex 27 - Document Object Model (DOM) 2</h1>
+	<p>In this exercise we construct a simple form. We will use the <code>forms</code>
+		attribute of the <code>Document</code> browser object to obtain the values of all the form
+		elements and display them to the user.
+	</p>
+	<form id="form1" action="" method="">
+		<fieldset>
+			<legend>Simple Form</legend>
+			<label for="firstname">First Name:</label> 
+			<input type="text" name="fname" value="John"><br/>
+			<label for="lastname">Last Name:</label>
+			<input type="text" name="lname" value="Smith"><br/>
+			<label for="checkbbox">Remember me:</label>
+			<input type="checkbox" name="chkbox" value="remember_me"><br/>
+		
+			<p><input type="submit" value="Submit"></p>
+		</fieldset>
+	</form>
+	<button onclick="displayFormData()">Display</button>
+<hr/>
+	<div id="content"></div>
+<script>
+function displayFormData() {
+	var frm = document.forms["form1"];
+    var text = "";
+    for (let i = 0; i < frm.length; i++) {
+        text += frm.elements[i].value + "<br/>";
+     }
+     document.getElementById("content").innerHTML = text;
+}
+
+</script>
+</body>
+</html>
+

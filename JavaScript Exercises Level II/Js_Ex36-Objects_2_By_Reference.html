@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 36</title>
+</head>
+<body>
+	<h1>Level II - Ex 36 Objects 2</h1>
+	<p>
+		Objects are passed around by reference and they are never copied. When we make copies of them, we really just copying the references to that object. In Javascript objects can be handled almost interchangeably like arrays. You can access the mebers of an object (methods or properties) as if they were key/value pairs ina a Java Hash Table, Python Dictionary or PHP Associative array.
+	</p>
+	<h2>Prototyping</h2>
+	<p>
+		Every object is linked to a prototype object from which it can inherit properties. All objects created from object literals are linked to <code>Object.prototype</code> that comes as the archetypal Javascript object.
+	</p>
+	<h2>Iterating</h2>
+	<p>You can iterate over the properties of a JavaScript object with the <code>for ... in</code> loop. This is 	 	even true for the global browser object or any DOM nodes as well. We can use thios technique to iterate over 	objects for the purpose of comparing them, displaying them, sorting them or copying them (deep copies).
+	</p>
+
+<hr/>
+<div id="container">
+	
+</div>
+
+<script>
+var employee = {
+    firstname: "Joe",
+    lastname: "Howard",
+    salary: 780,
+    married: false,
+    qualifications: ["IT Infrastracture", "Fluent English", "Adequate French"],
+    fullName: function() {
+        return this.firstname + " " + this.lastname;      
+    }
+};
+
+console.table(employee);
+document.write("Mr " + employee.lastname + " wage is " + employee.salary + "<br/>");
+document.write("Marital status: " + employee["married"] + "<br/>");
+document.write(`Full Name is: ${employee.fullName()}<br/>`);
+document.write(`We can also do -> Full Name is: ${employee['fullName']()}<br/>`);
+
+var hourlyEmp = employee;
+
+hourlyEmp.salary = 500;
+
+document.write(`Hourly employee salary is ${hourlyEmp.salary}<br/>`);
+document.write(`Employee salary is ${employee['salary']}<br/>`);
+
+// Even the global object can be treated as an array with array notation
+function globalWrite() {
+	document.write(`The global browser object is like any other.<br/>`);
+}
+
+window['globalWrite']();
+window.globalWrite();
+
+</script>
+</body>
+</html>
+

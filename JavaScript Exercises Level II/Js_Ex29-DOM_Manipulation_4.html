@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 29</title>
+</head>
+<body>
+	<h1>Level II - Ex 29 Calculating Cylinder Radius</h1>
+	<p>
+		In this exercise we'll calculate the volume of a cylinder. We will use simple
+		HTML5 validation techniques.
+	</p>
+	<p>
+		
+	</p>
+	<h1></h1>
+<div id="container">
+	<form name="form1" method="" >
+		<label for="radius">Radius:</label>
+		<input type="number" placeholder="radius in cm ..." id="radius" min="1" max="1000"><br/>
+		<label for="radius">Height:</label>
+		<input type="number" placeholder="height in cm ..." id="height" min="1" max="1000"><br/>
+		<label for="litres">Result in Litres</label>
+		<input type="checkbox" id="litres"><br/>
+	</form>  <!-- End of Form -->
+	<div>
+		<button id="calculate">Calculate</button>
+	</div>
+</div>
+<div id="result">
+	
+</div>
+	<hr/>
+<script>
+function calculate() {
+	var radius = document.forms['form1'][0].value; 
+	var height = document.forms[0].elements[1].value;
+	var chkLitres = document.getElementById('litres');
+
+	var output = document.getElementById('result');
+	
+	// Loging values in the console for debugging
+	console.log(radius);
+	console.log(height);
+	console.log(chkLitres);
+
+	const cylinderVolume = (r, h) => {
+		return (Math.PI * Math.pow(radius, 2) * height).toFixed(2);
+	}
+	if (chkLitres.checked) {
+		output.innerHTML = `Cylinder Volume = ${(cylinderVolume(radius, height) / 1000).toFixed(2)}
+			 Litres`;
+	}
+	else {
+		output.innerHTML = `Cylinder Volume = ${cylinderVolume(radius, height)} cm<sup>3</sup>`;
+	}
+}
+	
+	
+	document.getElementById('calculate').addEventListener("click", calculate);
+</script>
+</body>
+</html>
+

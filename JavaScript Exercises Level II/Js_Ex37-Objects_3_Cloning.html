@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 37</title>
+</head>
+<body>
+	<h1>Level II - Ex 37 Objects 3 Comparing and Cloning Objects</h1>
+	<h2>Comparing Objects</h2>
+	<p>
+		Since equality operators <code>==</code> or <code>===</code> work solely on primitive values, you cannot use them to compare objects because they do nothing more than compare the <em>reference</em> contained to those objects. If you want to examine if two objects contain the same members, you have to do a careful inspection of each and look at each member individually with a loop.  
+	</p>
+	<h2>Cloning Objects</h2>
+	<p>
+		Simply assigning objects to another variable does not make a complete duplicate of that object. If you want to clone it (that is make a disconnected copy or <em>deep</em> copy) you have to go to considerable effort to make sure that every member is individually copied from one object to another. 
+	</p>
+
+<hr/>
+<div id="container">
+	
+</div>
+
+<script>
+// a, b, c are refer to 3 different empty objects because of the empty brackets ({}) notation
+var a = {};
+var b = {};
+var c = {};
+
+// a, b, c are all refer to the same empty object
+a = b = c = {};
+
+// Assigning a clone method to Object.prototype
+Object.prototype.clone = function() {
+	var objClone = new Object();
+	for (var key in this) {
+		objClone[key] = this[key];
+	}
+	return objClone;
+}
+
+const oldObject = {
+	name: "John",
+	sayHello: function() {
+		document.write(`Hello! I am ${this.name}`);
+	}
+}
+
+const shallowClonedObject = oldObject;
+const deepClonedObject = oldObject.clone();
+oldObject.name = "Nick";
+
+// If clonedObject was just a reference to oldObject, then this would output “Nick”:
+document.write(`<br/>${deepClonedObject.name}`); // "John"
+document.write(`<br/>${shallowClonedObject.name}`); // "Nick"
+ 
+
+</script>
+</body>
+</html>
+

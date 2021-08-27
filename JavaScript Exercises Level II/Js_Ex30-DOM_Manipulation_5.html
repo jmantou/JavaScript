@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 30</title>
+</head>
+<body>
+	<h1>Level II - Ex 30 Creating Page Elements</h1>
+	<p>
+		In an HTML document, the <code>document.createElement()</code> method creates the HTML Element
+		specified by tagName, or an HTMLUnkownElement if the tagName isn't recognized.
+	</p>
+	<p>
+		After the element is created, use the <code>element.appendChild()</code>
+		 or <code>element.insertBefore()</code> method to insert it to the document in the preferred
+		 position.
+	</p>
+	<h2>Creating a paragraph with some text</h2>
+<div id="container">
+	
+</div>
+<div>
+	<button id="create" onclick="domElementCreation()">Create</button>
+</div>
+<hr/>
+<script>
+function domElementCreation() {
+	var paragraph = document.createElement('p');
+	paragraph.innerText = "This is a newly created paragraph inside the container tag";
+	document.getElementById("container").appendChild(paragraph);
+}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<head>
+	<title>JavaScript Level II - Ex 28</title>
+</head>
+<body>
+	<h1>Level II - Ex 28 - Validating form fields with RegExpressions</h1>
+	<p>
+		A <em>Regular Expression</em> is a powerful mini language for searching, matching and replacing
+		text patterns. It migrated for the UNIX operating system to many programming languages.
+		Essentially what it does is alloe the programmer to search for complex patterns and expressions
+		within a string.
+ 	</p>
+	<p>
+		We usually use Regular Expressions with string <code>match(), replace()</code> methods.
+	</p>
+	<p>
+		For a complete listing of all <code>Regular Expressions</code> operators click the link below:
+   </p>
+   <a href="https://www.w3schools.com/">Regular Expressions</a>
+	<h2>Matching A Reg Expression Pattern</h2>
+<form name="form1" method="" >
+    <div>
+        <label>RegularExpression</label> 
+		<p>
+			<input type="text" name="reg-exp" id="reg-exp">
+		</p>
+    </div>
+    <div>
+		<label>Working Text</label>
+		<p>
+			<input type="text" name="working-text" id="working-text">
+		</p>
+	</div>
+	<div>
+		<button type="reset">Reset</button>
+	</div>
+    
+</form>  <!-- End of Form -->
+<div>
+	<button onclick="checkRegExp()">Check</button>
+</div>
+
+<div id="content">
+
+</div>
+	<hr/>
+<script>
+function checkRegExp() {
+	var regExpression = document.forms["form1"][0].value; 
+    var workingText = document.forms["form1"][1].value;
+	
+	
+	var validRegex = true;
+	try {
+		new RegExp("regExpression");
+	}
+	catch(e) {	
+		validRegex = false;
+	}
+	if (!validRegex) {
+		document.getElementById("content").innerHTML = `Not a valid Regular expression<br/>`;
+	}
+	if (workingText.length == 0) {
+		document.getElementById("content").innerHTML = `You must enter a text string<br/>`;
+	}
+	else {
+		var res = workingText.match(regExpression);
+		document.getElementById("content").innerHTML = `Match: ${res}<br/>`;
+
+	}
+    
+	console.log(regExpression);
+	console.dir(regExpression);
+	console.dir(validRegex);
+	
+}
+</script>
+</body>
+</html>
+
