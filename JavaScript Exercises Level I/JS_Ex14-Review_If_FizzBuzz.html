@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (14)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 14 - The Fizz Buzz</h1>
+		<p>
+			The <em>FizzBuzz</em> problem is a very common test given in coding interviews. The task 
+			is simple: <br/>Print integer numbers from 1 to num, but print 'Fizz' if an integer is divisible
+			by 3, print 'Buzz' if an integer is divisible by 5 and print 'FizzBuzz' if an integer
+			is divisible both by 3 and 5.  
+		</p>
+		<p>
+			We provide two implementations with <code>for</code> and <code>while</code> loops. 
+			So for integer numbers from 1 up to 30 we have the following solutions:
+		</p>
+        
+		<hr/>
+	<script>
+	document.write("<h2>Fizz Buzz - For Loop</h2><br/>");
+	for (var i = 0; i <= 30; i++) {
+    	if (((i % 3) == 0) && ((i % 5) == 0)) {
+        	document.write("FizzBuzz<br/>");
+    	}
+    	else if ((i % 5) == 0) {
+        	document.write("Buzz<br/>");
+    	}
+    	else if (((i % 3) == 0)) {
+        	document.write("Fizz<br/>");
+    	}
+		else {
+			document.write(i + "<br/>");
+		}
+	}
+
+	document.write("<hr/><h2>Fizz Buzz - While Loop</h2><br/>");	
+	var x = 0;
+	while (x <= 30) {
+		// Slightly different implementation using EKP (3, 5) = 15 and simple Ifs
+		if (x % 15 === 0){ 
+			document.write('Fizbuzz<br/>');
+		}
+		else if (x % 3 === 0 ){
+			document.write('Fizz<br/>');
+		}
+		else if(x % 5 === 0 ) {
+			document.write('Buzz<br/>');
+		}
+		else {
+
+			document.write(x + '<br/>');
+		}
+		x++;
+	}
+	</script>
+	</body>
+</html>
+
+		
+	

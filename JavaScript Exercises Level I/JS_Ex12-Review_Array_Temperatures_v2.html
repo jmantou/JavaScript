@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (12)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 12 - Array Temperatures</h1>
+		<p>
+			This exercise will help us review array methods, loops and operators.
+		</p>
+		<h2>Exercise - Array Temperatures Ver 2</h2>
+		<p>
+			Given 28 day temperatures for month 'February' first we must group the temperatures
+			for every week and then compute some basic statistics, like average month temperature, Max 5
+			and Min 5 temperatures. 
+		</p>
+		<p>
+			This is the same problem like the previous exercise. We use a more algorithmic approach
+			to group the temperatures and we also use a function for computing the average temperature. We 
+			also use different array methods regarding the previous example.
+		</p>
+		<p>You can read more about JavaScript Array methods in the following link:</p>
+		<a href="https://www.w3schools.com/js/js_array_methods.asp" target="_blank">
+			JavaScript Array Methods</a>
+		<hr/>
+	<script>
+	var temps = [18, 18, 19, 15, 16, 14, 08,
+
+			16, 22, 21, 21, 25, 18, 17,
+
+			15, 15, 14, 18, 06, 11, 15,
+
+			08, 09, 04, 02, 15, 15, 12];
+
+
+	var week = 1;
+
+	document.write("<h3>Temperatures By Week</h3>")
+	document.write("Week: " + week + " ");
+	for (var i = 0; i < temps.length; i++) {
+		document.write(temps[i] + ", ");
+
+		// We use modulo operator to group the temperatures
+		if ((((i + 1) % 7) === 0) && (week !== 4)) {
+			document.write("<br/> Week: " + (++week) + " ");
+		}
+	}
+
+	var sortedTemps = temps.sort(function(a, b) {
+		return a - b;
+	});
+	var maxTemps = temps.reverse().slice(0, 5);
+	var minTemps = temps.slice(0, 5);
+	var averageTemps = avg(temps).toFixed(2);
+	
+	document.write("<br/>");
+	document.write("<br/><hr/>" + temps + "<br/>");
+	document.write("Maximum 5 temperatures are:" + " " + maxTemps + "<br />");
+	document.write("Minimum 5 temperatures are:" + " " + minTemps + "<br />");
+	document.write("Average temperatures for February is :" + " " + averageTemps + 
+		" <sup>o</sup>C");
+
+	function avg(arr) {
+		var sum = 0;
+		for (var j = 0; j < arr.length; j++) {
+			sum += parseInt(arr[j]);
+		}
+		return sum / arr.length;
+	}
+	</script>
+	</body>
+</html>
+
+		
+	

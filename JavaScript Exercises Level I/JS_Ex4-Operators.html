@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Level I - Operators</title>
+</head>
+<body>
+    <h1>Level I - Ex 4 - Operators</h1>
+    <p>
+        Most of the operators available in JavaScript are supported universally between
+        all the various JavaScript engines and most of them are common with other
+        mainstream languages like C, C++, Java, C#
+    </p>
+    <p>
+        You can see a list with all the JavaScript operators in the link below:
+    </p>
+    <p>
+        <a href="https://www.w3schools.com/js/js_operators.asp">
+            JavaScript Operators</a>
+    </p>
+    <hr/>
+<script>
+var name = prompt("Enter your name: ");
+document.write("<br/>Your name is " + name + "<br/>");
+var question = "Enter your age Mr " + name;
+var age = prompt(question);
+document.write("<br/>Your age is " + age + "<br/>");
+age = parseInt(age); // Can also use Number(age)
+document.write("<br/>Your age next year will be: " + (age + 1) + "<br/>");
+</script>
+</body>
+</html>

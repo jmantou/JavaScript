@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (13)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 13 - Nested Loops</h1>
+		<p>
+			All the loops we learned so far can be nested. For every run of the outer loop the nested loop repeats itself the necessary times. It is best for the programmer to avoid nesting more than three levels because it makes the code exceedingly difficult and error prone. 
+		</p>
+		<h2>The Multiplication Table</h2>
+		<p>
+			In this exercise we use two nested <code>for loops</code> to produce <em>The Multiplication Table</em>. We also use some HTML inside JavaScript to format the result as a table.
+		</p>
+		<hr/>
+	<script>
+		document.write("<strong>The Multiplication Table</strong>");
+		document.write ("<table border=\"1\"> \n");
+		for(var y = 1; y <= 10; y++)
+		{
+			document.write( "<tr>");
+			for(var x = 1;  x <= 10; x++)
+			{
+				document.write( "<td>");
+				document.write(x * y);
+				document.write( "</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write( "</table>");
+
+	</script>
+	</body>
+</html>
+
+		
+	

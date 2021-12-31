@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (18)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 18 - String Object & Methods v1</h1>
+		<p>
+			JavaScript strings are one of the most important components of the language, probably used more
+			than any other data type. Though we may get numeric values from forms, the values are 
+			retrieved as strings, which then are converted to numeric values.
+		</p>
+		<h2>String Literals & String Objects</h2>
+		<p>
+			 A string in JavaScript can be both a primitive data type or an instance of the <code>String</code>
+			 object. Most of the time these two formats are interchangeable although there are small
+			 differences depending on the use.
+		</p>
+		<p>Strings are immutable. All string methods return a new value. They do not change the original
+			 variable.</p>
+		<p>
+			Either way strings in JavaScript have built in methods that we can use to manipulate them. For 
+			a complete reference you can visit:
+		</p>
+		<a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">JavaScript String Methods Reference</a>
+        
+		<hr/>
+	<script>
+	var str = "Hello John";
+	var ln = str.length;
+	var empty = "" || '';
+	var empty2 = "";
+	var expression = 'Don\'t panic! Keep studying!';
+	var betterExpression = "Don't panic! Keep studying!"; 
+	var spanishGreet = str.replace("Hello", "Hola");
+	var phrase = "Spliting a string to array. Very useful!";
+
+	alert("Hello everybody!\nHope you enjoy the lesson.");
+	document.write("Greeting (ENG): " + str + "<br/>");
+	document.write("Gretting (SPA): " + spanishGreet + "<br/>");
+	document.write("String '" + str + "' length is " + ln + " chars.<br/>");
+	document.write("String in Uppercase: " + str.toUpperCase() + "<br/>");	
+	document.write("String in Uppercase (locale): " + str.toLocaleUpperCase() + "<br/>");	
+	document.write("String in Lowercase (locale): " + str.toLocaleLowerCase() + "<br/>");	
+	
+	var haystack = "123456A";
+	var replaceString = "****";
+	var newString1 = haystack.replace("1234", replaceString);
+	document.write(newString1 + "<br/>");
+
+	var newString2 = haystack.substr(5, 2);
+	document.write(newString2 + "<br/>");
+
+	isBlank = function(input) {
+		if (input.length === 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	stringToArray = function(input) {
+		return input.trim().split(' ');
+	}
+
+	var phraseAsArray = stringToArray(phrase);
+	console.table(phraseAsArray);
+	document.write("<br/>" + isBlank(empty));
+	document.write("<br/>" + isBlank(str));
+	document.write("<br/>" + stringToArray(phrase));
+	document.write("<br/>" + stringToArray(str));
+	
+
+	</script>
+	</body>
+</html>
+
+		
+	
