@@ -5,7 +5,8 @@
 	</head>
 	
 	<body>
-	    <h1>JavaScript Exercise 16 - Functions Part I</h1>
+		<h1>JavaScript Exercise 16 - Functions Part I</h1>
+		
 		<p>
 			Functions are an elemental concept in all computer languages. A function encloses
 			a set of statements as a modular unit. Functions in JavaScript are used for code reuse, information
@@ -33,6 +34,10 @@
 		<p>
 			In the function body, the arguments (parameters) behave as if they were local variables and 
 			can be manipulated inside the function.
+		</p>
+		<p>
+			From ES6 onwards we can declare default parameters as arguments in functions. we can also pass an entire object
+			instead of strings in default parameters.
 		</p>
 		<hr/>
 	<script>
@@ -62,6 +67,31 @@
 
 	console.log(myName());
 	console.log(myName);
+	
+	// Function with default parameters
+	document.write('<br/><hr/>');
+	function favoriteActivity1(name = 'Ken', activity = 'walk') {
+		document.write(`Mr ${name} likes to ${activity}<br/>`);
+	}
+	
+	favoriteActivity1('John', 'run');
+	favoriteActivity1();
+	
+	document.write('<br/>');
+	
+	const person = {
+		name: {
+			first: 'Tim',
+			last: 'Jones'
+		},
+		activity: 'swim'
+	}
+	// The parameters can also default to an object
+	function favoriteActivity2(p = person) {
+		document.write(`Mr ${person.name.last} likes to ${person.activity}<br/>`);
+	}
+	
+	favoriteActivity2();
 	</script>
 	</body>
 </html>

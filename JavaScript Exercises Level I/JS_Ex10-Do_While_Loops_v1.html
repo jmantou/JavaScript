@@ -14,11 +14,38 @@
 		</p>
 		<p>
 			Thus, the <code>do ... while</code> statement always executes at least once. After this these two types of loops behave the same. After each iteration of the body of the loop, the expression is checked again, and if is <em>true</em>, the loop continues. If it has changed from <em>true</em> to <em>false</em> the loop statement ends.
-        </p>
+		</p>
+		<p>We also introduce in this loop the <code>break</code> and <code>continue</code> 
+			statements that can be use with all kinds of loops and block statements.
+		</p>
 		<hr/>
 	<script>
-		
+	var i = 0;
+	do {
+		i++;
+		document.write(`Loop # ${i}<br/>`);	
+	} while (i < 10); // Do not forget the ;	
 
+	document.write(`<br/>`);
+	var j = 0;
+	do {
+		j++;
+		document.write(`Loop # ${j}<br/>`);	
+		if (j === 3) {
+			break;
+		}
+	} while (j < 10);
+
+
+	document.write(`<br/>`);
+	var k = 0;
+	do {
+		k++;
+		if (k == 3) {
+			continue;
+		}
+		document.write(`Loop # ${k}<br/>`);	
+	} while (k < 10);
 	</script>
 	</body>
 </html>

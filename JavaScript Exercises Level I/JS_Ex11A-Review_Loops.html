@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>JavaScript Exercises Level I - (11A)</title>
+	</head>
+	
+	<body>
+	    <h1>JavaScript Exercise 11A - Loops v2</h1>
+		<p>
+			Whenever we want a specific piece of code to run many times to run many times, or want to work sequentially on each element of an array or object we use loops. Loops most of the time run until a condition is met.
+		</p>
+		<p>
+			There are several loop types available depending on how and when we want the condition to be checked. Generally it's better to use the loop that apllies best to the programming solution we try to achieve. 
+		</p>
+        
+		<hr/>
+	<script>
+		var num = 10;
+		var someArray = [1, 35, "3rd Element", false];
+		document.write("Multiplication Table of " + num + ":<br/>");
+		for (var i = 0; i < 10; i++) {
+			document.write(num + " x " + i + " = " + (num * i) + "<br/>");
+		}
+
+		document.write("Even numbers up to 20:<br/>");
+		for (i = 0; i <= 20; i +=2) {
+			document.write(i + "<br/>");
+		}
+
+		document.write("Displaying Array elements with for loop:<br/>");
+		for (i = 0; i < someArray.length; i++) {
+			document.write(i + ", ");
+		}
+		
+		document.write("<br/>");
+		document.write("Displaying Array elements with for ... of:<br/>");
+		for (var j of someArray) {
+			document.write(j + ", ");
+		}
+		
+		document.write("<br/>");
+		document.write("Displaying Array elements with for ... of in reverse order:<br/>");
+		someArray = someArray.reverse();
+		for (j of someArray) {
+			document.write(j + ", ");
+		}
+		
+
+		document.write("<br/>");
+		document.write("Displaying Array elements in reverse order with simple for loop:<br/>");
+		// someArray is already reversed - So we reverse it again
+		for (var k = someArray.length - 1; k >= 0; k--) {
+			document.write(someArray[k] + ", ");
+		}
+
+	</script>
+	</body>
+</html>
+
+		
+	

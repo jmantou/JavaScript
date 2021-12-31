@@ -18,6 +18,10 @@
 			<em>undefined</em> is turned instead. Whenever function code reaches <code>return</code>, 
 			function execution stops even if there is more code to be executed in the function. 
 		</p>
+		<p>
+			We have great flexibility in what we can return from a function, comparing to other languages.
+			See the last example where we return an object in order to add two numbers.
+		</p>
 		<h2>Variable Scope in Functions</h2>
 		<p>
 			The scope of a variable refers to the portions of the program where it can be directly
@@ -36,6 +40,19 @@
 	
 	document.write(addTwoSquaredNumbers(2, 3) + "<br/>");
 	document.write("Hello Mr Smith. " + message() + "<br/>");
+
+	function addTwoNumbers(x, y) {
+		return(
+			{
+				result: x + y,
+				number1: x,
+				number2: y
+			}
+		);
+	}
+	var sum = addTwoNumbers(5, 3);
+	document.write(sum.number1 + " + " + sum.number2 + " = " + sum.result + "<br/>");
+	document.write(`${sum.number1} + ${sum.number2} = ${sum.result}<br/>`);
 	</script>
 	</body>
 </html>

@@ -28,13 +28,21 @@
 		<hr/>
 	<script>
 	var str = "Hello John";
-	var spanishGreet = str.replace("Hello", "Hola");
 	var ln = str.length;
+	var empty = "" || '';
+	var empty2 = "";
+	var expression = 'Don\'t panic! Keep studying!';
+	var betterExpression = "Don't panic! Keep studying!"; 
+	var spanishGreet = str.replace("Hello", "Hola");
+	var phrase = "Spliting a string to array. Very useful!";
 
-	
+	alert("Hello everybody!\nHope you enjoy the lesson.");
 	document.write("Greeting (ENG): " + str + "<br/>");
 	document.write("Gretting (SPA): " + spanishGreet + "<br/>");
-	document.write("String '" + str + "' length is " + ln + " chars.<br/>");	
+	document.write("String '" + str + "' length is " + ln + " chars.<br/>");
+	document.write("String in Uppercase: " + str.toUpperCase() + "<br/>");	
+	document.write("String in Uppercase (locale): " + str.toLocaleUpperCase() + "<br/>");	
+	document.write("String in Lowercase (locale): " + str.toLocaleLowerCase() + "<br/>");	
 	
 	var haystack = "123456A";
 	var replaceString = "****";
@@ -44,6 +52,26 @@
 	var newString2 = haystack.substr(5, 2);
 	document.write(newString2 + "<br/>");
 
+	isBlank = function(input) {
+		if (input.length === 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	stringToArray = function(input) {
+		return input.trim().split(' ');
+	}
+
+	var phraseAsArray = stringToArray(phrase);
+	console.table(phraseAsArray);
+	document.write("<br/>" + isBlank(empty));
+	document.write("<br/>" + isBlank(str));
+	document.write("<br/>" + stringToArray(phrase));
+	document.write("<br/>" + stringToArray(str));
+	
 
 	</script>
 	</body>

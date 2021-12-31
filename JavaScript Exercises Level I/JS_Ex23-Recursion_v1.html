@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Level I - Ex 23</title>
+</head>
+<body>
+    <h1>Level I - Ex 23 - Using Recursion ver 1</h1>
+    <p>
+         <strong>Recursion</strong> is a basic programming technique in which a function calls itself
+         repeatedly to solve a problem. Many programming problems and algorithms can be solved this way
+         and some problems that can be solved by other techniques are better solved by recursion.
+    </p>
+    <p>
+        The concept of recursion can be difficult at times and many programmers try to avoid it if
+        they can. But some programming problems can be solved very efficiently with recursion and with
+        more cost-effective algorithms.
+    </p>
+    <h3>Calculating the Factorial of a Number</h3>
+    <p>
+        The calculation of a number factorial is a classic example for introducing recursion. 
+        The <em>Factorial</em> of any given integer <b>n</b> is the product of all the integers from 
+        1 to n. Thus, the factorial of 5 is 120.
+    </p>
+    <p>5! = 1 * 2 * 3 * 4* 5 = 120</p>
+    <p>We supply the recursive solution below along with a non-recursive one.</p>
+    <hr/>
+<script>
+// Factorial Non-Recursive
+function factorialNonRecursive(num) {
+    var factorial = 1;
+    for (var i = 1; i <= num; i++) {
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+
+document.write("<p>Non-Recursive Algorithm<br/>");
+document.write("Factorial of 6 | 6! = " + factorialNonRecursive(6) + "</p>");
+
+// Factorial Recursive
+var factorialRecursive = function(num) {
+    if (num == 1) {
+        return 1;
+    }
+    else {
+        return num * factorialRecursive(num - 1);
+    }
+}
+
+document.write("<p>Non-Recursive Algorithm<br/>");
+document.write("The factorial of 1 | 1! = " + factorialRecursive(1) + "<br/>");
+document.write("The factorial of 4 | 4! = " + factorialRecursive(4) + "</p>");
+</script>
+</body>
+</html>
